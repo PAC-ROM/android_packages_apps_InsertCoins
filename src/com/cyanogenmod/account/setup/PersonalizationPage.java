@@ -175,8 +175,8 @@ public class PersonalizationPage extends Page {
         final int defaultBrightness = context.getResources().getInteger(
                 com.android.internal.R.integer.config_buttonBrightnessSettingDefault);
 
-        Settings.System.putInt(context.getContentResolver(),
-                Settings.System.NAVIGATION_BAR_SHOW, enabled ? 1 : 0);
+        Settings.PAC.putInt(context.getContentResolver(),
+                Settings.PAC.NAVIGATION_BAR_SHOW, enabled ? 1 : 0);
         KeyDisabler.setActive(enabled);
 
         if (enabled) {
