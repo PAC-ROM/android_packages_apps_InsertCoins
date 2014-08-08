@@ -1,5 +1,5 @@
 [gerrit]
 host=review.pac-rom.com
 port=29418
-project=packages_apps_CMAccount.git
+project=android_packages_apps_InsertCoins.git
 defaultbranch=pac-4.4
