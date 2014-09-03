@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.cyanogenmod.account"
+        package="com.pacrom.insertcoins"
         android:versionCode="2">
 
     <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
@@ -49,17 +49,17 @@
     <permission android:name="org.whispersystems.whisperpush.permissions.REGISTER"
                 android:protectionLevel="signature" />
 
-    <permission android:name="com.cyanogenmod.account.permission.C2D_MESSAGE"
+    <permission android:name="com.pacrom.insertcoins.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.cyanogenmod.account.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.pacrom.insertcoins.permission.C2D_MESSAGE" />
 
     <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="17" />
 
     <application android:label="@string/app_name"
         android:icon="@drawable/icon"
-        android:theme="@style/Theme.CMAccount"
-        android:name=".CMAccount">
+        android:theme="@style/Theme.InsertCoins"
+        android:name=".InsertCoins">
 
         <uses-library android:name="org.cyanogenmod.hardware"
                       android:required="false" />
@@ -91,21 +91,12 @@
             android:excludeFromRecents="true"
             android:screenOrientation="locked" />
 
-        <activity android:name=".auth.AuthActivity"
-            android:label="@string/product_name"
-            android:launchMode="singleTop"
-            android:screenOrientation="locked" />
-
-        <activity android:name=".auth.UpdateRequiredActivity"
-                  android:label="@string/product_name"
-                  android:screenOrientation="locked" />
-
         <receiver android:name=".gcm.GCMReceiver" android:exported="true"
             android:permission="com.google.android.c2dm.permission.SEND">
 
             <intent-filter>
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <category android:name="com.cyanogenmod.account" />
+                <category android:name="com.pacrom.insertcoins" />
             </intent-filter>
         </receiver>
 
@@ -116,7 +107,7 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name=".CMAccount$CMAccountAdminReceiver"
+        <receiver android:name=".InsertCoins$CMAccountAdminReceiver"
             android:permission="android.permission.BIND_DEVICE_ADMIN">
             <meta-data android:name="android.app.device_admin"
                 android:resource="@xml/device_admin" />
@@ -129,29 +120,9 @@
         </receiver>
         <receiver android:name=".receiver.ApplyHexoIconsReceiver" android:exported="false">
             <intent-filter>
-                <action android:name="com.cyanogenmod.account.intent.action.APPLY_HEXO_ICONS" />
+                <action android:name="com.pacrom.insertcoins.intent.action.APPLY_HEXO_ICONS" />
             </intent-filter>
         </receiver>
 
-        <service android:name=".gcm.GCMService"
-            android:exported="false" />
-
-        <service
-                android:name=".gcm.GCMIntentService"
-                android:exported="false" />
-
-        <service android:name=".api.DeviceFinderService"
-            android:exported="false" />
-
-        <service android:name=".api.PingService"
-            android:exported="false" />
-
-        <service
-                android:name=".encryption.ECDHKeyService"
-                android:exported="false" />
-
-        <provider
-                android:name=".provider.CMAccountProvider"
-                android:authorities="com.cyanogenmod.account.store"/>
     </application>
 </manifest>

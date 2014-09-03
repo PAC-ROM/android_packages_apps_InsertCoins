@@ -15,7 +15,7 @@
      limitations under the License.
 -->
 <resources>
-    <style name="Theme.CMAccount" parent="@android:style/Theme.Holo">
+    <style name="Theme.InsertCoins" parent="@android:style/Theme.Holo">
         <item name="android:windowActionBar">false</item>
         <item name="android:windowNoTitle">true</item>
     </style>

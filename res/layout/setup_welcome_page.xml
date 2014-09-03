@@ -43,7 +43,7 @@
                 style="@style/SetupWizardPageSummary"
                 android:text="@string/setup_welcome_summary" />
 
-        <com.cyanogenmod.account.ui.LocalePicker
+        <com.pacrom.insertcoins.ui.LocalePicker
                 android:id="@+id/locale_list"
                 android:layout_width="match_parent"
                 android:layout_height="0px"
