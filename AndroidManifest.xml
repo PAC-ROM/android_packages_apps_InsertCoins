@@ -85,29 +85,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.CMAccountActivity"
-            android:label="@string/product_name"
-            android:launchMode="singleTop"
-            android:excludeFromRecents="true"
-            android:screenOrientation="locked" />
-
-        <receiver android:name=".gcm.GCMReceiver" android:exported="true"
-            android:permission="com.google.android.c2dm.permission.SEND">
-
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <category android:name="com.pacrom.insertcoins" />
-            </intent-filter>
-        </receiver>
-
-        <receiver android:name=".gcm.GCMPackageReceiver" android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.PACKAGE_ADDED" />
-                <data android:scheme="package" />
-            </intent-filter>
-        </receiver>
-
-        <receiver android:name=".InsertCoins$CMAccountAdminReceiver"
+        <receiver android:name=".InsertCoins$InsertcoinsAdminReceiver"
             android:permission="android.permission.BIND_DEVICE_ADMIN">
             <meta-data android:name="android.app.device_admin"
                 android:resource="@xml/device_admin" />

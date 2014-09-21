@@ -63,7 +63,7 @@ public class InsertCoins extends Application {
         super.onCreate();
         mStatusBarManager = (StatusBarManager)getSystemService(Context.STATUS_BAR_SERVICE);
         final DevicePolicyManager dpm = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
-        final ComponentName deviceAdmin = new ComponentName(getApplicationContext(), CMAccountAdminReceiver.class);
+        final ComponentName deviceAdmin = new ComponentName(getApplicationContext(), InsertCoinsAdminReceiver.class);
         dpm.setActiveAdmin(deviceAdmin, true);
     }
 
@@ -78,6 +78,6 @@ public class InsertCoins extends Application {
     }
 
 
-    public static class CMAccountAdminReceiver extends DeviceAdminReceiver {}
+    public static class InsertCoinsAdminReceiver extends DeviceAdminReceiver {}
 
 }
