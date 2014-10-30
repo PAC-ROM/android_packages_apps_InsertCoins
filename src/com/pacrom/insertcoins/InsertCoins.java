@@ -18,8 +18,6 @@ package com.pacrom.insertcoins;
 
 import android.app.Application;
 import android.app.StatusBarManager;
-import android.app.admin.DeviceAdminReceiver;
-import android.app.admin.DevicePolicyManager;
 import android.content.ComponentName;
 import android.content.Context;
 
@@ -62,9 +60,6 @@ public class InsertCoins extends Application {
     public void onCreate() {
         super.onCreate();
         mStatusBarManager = (StatusBarManager)getSystemService(Context.STATUS_BAR_SERVICE);
-        final DevicePolicyManager dpm = (DevicePolicyManager) getSystemService(Context.DEVICE_POLICY_SERVICE);
-        final ComponentName deviceAdmin = new ComponentName(getApplicationContext(), InsertCoinsAdminReceiver.class);
-        dpm.setActiveAdmin(deviceAdmin, true);
     }
 
     public void disableStatusBar() {
@@ -76,8 +71,5 @@ public class InsertCoins extends Application {
     public void enableStatusBar() {
         mStatusBarManager.disable(StatusBarManager.DISABLE_NONE);
     }
-
-
-    public static class InsertCoinsAdminReceiver extends DeviceAdminReceiver {}
 
 }
